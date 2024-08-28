@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-navbar {
+            background-color: #123456;
+            transition: background-color 0.3s ease;
+        }
+        
+        .hero {
+            background-image: url('images/hero-bg.jpg'); /* Asegúrate de tener una imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        
+        .hero .content {
+            z-index: 1;
+            animation: fadeInUp 2s ease-out;
+        }
+        
+        .section-title {
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f8f9fa;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #007bff;
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        
+        .section-title:hover::after {
+            width: 80px;
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-primary {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+        }
+        
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">Sangre por Sangre</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#personajes">Personajes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catalogo">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#historia">Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#noticias">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resumen.html">Resumen</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero d-flex align-items-center justify-content-center text-center">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Sangre por Sangre</h1>
+            <p class="lead">Una historia de lucha, honor y familia</p>
+            <a href="#personajes" class="btn btn-primary btn-lg mt-3">Conoce a los personajes</a>
+        </div>
+    </header>
+
+    <div class="container mt-5 pt-5">
+        <section id="personajes" class="my-5">
+            <h2 class="section-title text-center">Personajes Principales</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="images/miklo.jpg" class="card-img-top" alt="Miklo">
+                        <div class="card-body">
+                            <h5 class="card-title">Miklo</h5>
+                            <p class="card-text">Un personaje complejo, atrapado entre dos mundos.</p>
+                            <a href="#catalogo-miklo" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="images/paco.jpg" class="card-img-top" alt="Paco">
+                        <div class="card-body">
+                            <h5 class="card-title">Paco</h5>
+                            <p class="card-text">El hermano que busca justicia, pero a qué costo.</p>
+                            <a href="#catalogo-paco" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="images/cruz.jpg" class="card-img-top" alt="Cruz">
+                        <div class="card-body">
+                            <h5 class="card-title">Cruz</h5>
+                            <p class="card-text">El artista atrapado en una vida de violencia.</p>
+                            <a href="#catalogo-cruz" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo" class="bg-light py-5">
+            <h2 class="section-title text-center">Catálogo de Personajes</h2>
+            <div id="catalogo-miklo">
+                <h3>Miklo</h3>
+                <p>Joven de ascendencia mexicana y anglosajona, atrapado entre dos culturas.</p>
+                <p><strong>Actor:</strong> Damian Chapa</p>
+                <p><strong>Rol en la historia:</strong> Protagonista principal, lucha por encontrar su lugar en el mundo.</p>
+                <hr>
+            </div>
+            <div id="catalogo-paco">
+                <h3>Paco</h3>
+                <p>Hermano de sangre de Miklo, busca justicia en un mundo injusto.</p>
+                <p><strong>Actor:</strong> Benjamin Bratt</p>
+                <p><strong>Rol en la historia:</strong> Hermano mayor, se convierte en policía tras su paso por las pandillas.</p>
+                <hr>
+            </div>
+            <div id="catalogo-cruz">
+                <h3>Cruz</h3>
+                <p>Artista talentoso, pero su vida se ve marcada por la violencia.</p>
+                <p><strong>Actor:</strong> Jesse Borrego</p>
+                <p><strong>Rol en la historia:</strong> El más sensible de los tres, sufre las consecuencias del estilo de vida pandillero.</p>
+                <hr>
+            </div>
+        </section>
+
+        <section id="galeria" class="my-5">
+            <h2 class="section-title text-center">Galería Multimedia</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/2.jpg" class="img-fluid rounded mb-4" alt="Imagen 1">
+                </div>
+                <div class="col-md-4">
+                    <img src="images/1.jpg" class="img-fluid rounded mb-4" alt="Imagen 2">
+                </div>
+                <div class="col-md-4">
+                    <img src="images/3.jpg" class="img-fluid rounded mb-4" alt="Imagen 3">
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="bg-dark text-white py-5">
+            <h2 class="section-title text-center">Historia de Sangre por Sangre</h2>
+            <p class="lead text-center">"Sangre por Sangre" es una película de culto que narra la vida de tres amigos en el barrio de East Los Angeles...</p>
+            <p class="text-center">La trama explora temas de lealtad, violencia, y redención a través de las experiencias personales de los personajes principales.</p>
+        </section>
+
+        <section id="noticias" class="my-5">
+            <h2 class="section-title text-center">Últimas Noticias</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Nueva Entrevista con el Director</h5>
+                            <p class="card-text">El director de "Sangre por Sangre" habla sobre el impacto cultural de la película y sus experiencias durante la producción...</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento de Conmemoración</h5>
+                            <p class="card-text">Se realizará un evento especial en East LA para conmemorar el aniversario de la película, con la participación de actores y el equipo...</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="my-5">
+            <h2 class="section-title text-center">Contacto</h2>
+            <form action="mailto:info@sangreporsangre.com" method="post" enctype="text/plain">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Sangre por Sangre. Todos los derechos reservados.</p>
+            <p>Contacto: <a href="mailto:info@sangreporsangre.com" class="text-white">info@sangreporsangre.com</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
